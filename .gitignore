@@ -1,0 +1,8 @@
+.python-version
+__pycache__
+data/
+result/
+scripts/
+test/
+notify_slack.py
+visualize.py
