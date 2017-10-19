@@ -5,11 +5,18 @@
 
 ## Chainer implementation of 3D Generative Adversarial Network.
 
+### Result
+Some samples generated chairs. (50epoch)
+
+<img width='33%' src='result/generated_samples/png/7.png'><img width='33%' src='result/generated_samples/png/13.png'><img width='33%' src='result/generated_samples/png/17.png'>
+<img width='33%' src='result/generated_samples/png/21.png'><img width='33%' src='result/generated_samples/png/30.png'><img width='33%' src='result/generated_samples/png/31.png'>
+<img width='33%' src='result/generated_samples/png/40.png'><img width='33%' src='result/generated_samples/png/97.png'>
+
 ### Requirements
 
 - chainer 2.0.1
 - scipy
-- scikit-imag
+- scikit-image
 
 ```
 pip install scipy scikit-image
@@ -27,7 +34,7 @@ pip install scipy scikit-image
 
 - If you want to plot voxel, [latest matplotlib](https://github.com/matplotlib/matplotlib) is needed. 
 
-  The [3D voxel / volumetric plot](https://matplotlib.org/devdocs/gallery/mplot3d/voxels.html) function is included only in unreleased version of matplotlib as of Oct 19, 2017)
+  The [3D voxel / volumetric plot](https://matplotlib.org/devdocs/gallery/mplot3d/voxels.html) function is included only in unreleased version of matplotlib as of Oct 19, 2017
 
   - matplotlib 2.1.0+323.ge6448bafc
 
@@ -53,5 +60,24 @@ Assuming that `.h5` has ``{ 'data': <np.array, shape (64, 64, 64)> }``. If you w
 
 ### Usage
 
-``python train.py``
+#### Trainng
 
+```
+python train.py
+```
+
+### Generate samples
+
+```
+python generate_samples.py <model_file> <save_dir> <num samples>
+```
+
+#### Visualization
+
+If you have `.binvox` file,  using [simple-voxel-viewer](https://github.com/piyo56/simple_voxel_viewer) is easy way.
+
+Or use 
+
+````
+python visualize.py <.binvox or directory>
+```

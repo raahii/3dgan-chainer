@@ -1,8 +1,10 @@
 .python-version
+.pyc
 __pycache__
 data/
-result/
+result/*
+!result/generated_samples/
 scripts/
+notebooks/
 test/
 notify_slack.py
-visualize.py
