@@ -9,7 +9,8 @@ from chainer.training import extensions
 from model.updater import Updater
 from model.net import Generator, Discriminator
 from common import binvox_rw
-from common.metrics import save_sample_voxels, save_sample_images, post_samples_to_slack
+from common.metrics import save_sample_voxels, save_sample_images
+#, post_samples_to_slack
 
 DEVELOPMENT = os.getenv("ENV") == "DEVELOPMENT"
 BATCH_SIZE = DEVELOPMENT and 4 or 30

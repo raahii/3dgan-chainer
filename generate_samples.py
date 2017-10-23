@@ -1,7 +1,6 @@
 import sys, os
 
 import numpy as np
-import chainer.cuda
 from chainer import serializers
 from chainer import Variable
 from model.net import Generator
@@ -21,20 +20,11 @@ def main():
     gen = Generator()
     serializers.load_npz(model_file, gen)
 
-    try:
-        xp = chainer.cuda.cupy
-    except AttributeError:
-        xp = np
-    
     # generate samples
-    # z = Variable(xp.asarray(gen.make_hidden(num, train=False)))
-    z = Variable(xp.asarray(gen.make_hidden(num)))
+    z = Variable(np.asarray(gen.make_hidden(num)))
     x = gen(z)
     
-    try:
-        x = chainer.cuda.to_cpu(x.data)
-    except:
-        x = x.data
+    x = x.data
 
     if save_dir[-1] != '/':
         save_dir += '/'

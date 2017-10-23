@@ -6,7 +6,7 @@ from common.data_io import write_binvox
 from chainer import Variable
 import subprocess
 from visualize import plot_voxels
-from notify_slack import post_images, post_text
+# from notify_slack import post_images, post_text
 
 def save_sample_voxels(gen, dst, num=3):
     """
@@ -64,18 +64,18 @@ def save_sample_images(gen, dst_voxel, dst_img):
 
     return make_images
 
-def post_samples_to_slack(gen, dst):
-    """
-    post saved voxel images to slack channel
-    """
-    @chainer.training.make_extension()
-    def post_slack(trainer):
-        epoch = trainer.updater.epoch - 1
-        save_img_dir = dst + str(epoch) + '/'
-
-        if os.path.exists(save_img_dir):
-            post_images(save_img_dir, str(epoch)+' epoch')
-        else:
-            print('[slack]: image directory is not found: ' + save_img_dir)
-
-    return post_slack
+# def post_samples_to_slack(gen, dst):
+#     """
+#     post saved voxel images to slack channel
+#     """
+#     @chainer.training.make_extension()
+#     def post_slack(trainer):
+#         epoch = trainer.updater.epoch - 1
+#         save_img_dir = dst + str(epoch) + '/'
+#
+#         if os.path.exists(save_img_dir):
+#             post_images(save_img_dir, str(epoch)+' epoch')
+#         else:
+#             print('[slack]: image directory is not found: ' + save_img_dir)
+#
+#     return post_slack
