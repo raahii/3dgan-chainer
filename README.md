@@ -63,7 +63,7 @@ python train.py
 python generate_samples.py <model_file> <save_dir> <num samples>
 ```
 
-##### Visualization
+#### Visualization
 
 If you have `.binvox` file,  using [simple-voxel-viewer](https://github.com/piyo56/simple_voxel_viewer) is easy way.
 
