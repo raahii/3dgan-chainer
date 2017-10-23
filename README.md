@@ -6,7 +6,7 @@
 ## Chainer implementation of 3D Generative Adversarial Network.
 
 ### Result
-Some samples generated chairs. (50epoch)
+Some **good** samples generated chairs. (50epoch)
 
 <img width='33%' src='result/generated_samples/png/7.png'><img width='33%' src='result/generated_samples/png/13.png'><img width='33%' src='result/generated_samples/png/17.png'>
 <img width='33%' src='result/generated_samples/png/21.png'><img width='33%' src='result/generated_samples/png/30.png'><img width='33%' src='result/generated_samples/png/31.png'>
@@ -14,23 +14,16 @@ Some samples generated chairs. (50epoch)
 
 ### Requirements
 
-- chainer 2.0.1
+- chainer(2.0.1)
 - scipy
 - scikit-image
+- h5py
 
 ```
-pip install scipy scikit-image
+pip install scipy scikit-image h5py
 ```
 
 #### Optional
-
-- If you want to use `h5` extension files as dataset, `h5py` is needed.
-
-  - h5py
-
-  ```
-  pip install h5py
-  ```
 
 - If you want to plot voxel, [latest matplotlib](https://github.com/matplotlib/matplotlib) is needed. 
 
@@ -44,9 +37,7 @@ pip install scipy scikit-image
 
 ### Dataset
 
-I used **ShapeNet-v2** dataset. 
-
-Training script only supporting `.binbox` or `.h5` extension.
+I used **ShapeNet-v2** dataset.  Training script support `.binbox` or `.h5` extension.
 
 Describe your dataset path to `DATASET_PATH` in `train.py`.
 
@@ -60,24 +51,23 @@ Assuming that `.h5` has ``{ 'data': <np.array, shape (64, 64, 64)> }``. If you w
 
 ### Usage
 
-#### Trainng
+#### Training
 
 ```
 python train.py
 ```
 
-### Generate samples
+#### Generation
 
 ```
 python generate_samples.py <model_file> <save_dir> <num samples>
 ```
 
-#### Visualization
+##### Visualization
 
 If you have `.binvox` file,  using [simple-voxel-viewer](https://github.com/piyo56/simple_voxel_viewer) is easy way.
 
-Or use 
-
-````
-python visualize.py <.binvox or directory>
+Or visualize with matplotlib, 
+```
+python visualize.py <binvox file or directory>
 ```

@@ -1,9 +1,10 @@
 .python-version
-.pyc
+*.pyc
 __pycache__
 data/
 result/*
 !result/generated_samples/
+!result/trained_models/
 scripts/
 notebooks/
 test/
