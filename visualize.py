@@ -23,7 +23,7 @@ def plot_voxels(in_path, title, out_path):
         plot_voxel(voxel.astype(np.bool),
                    '{}{}.png'.format(out_path, i))
 
-def plot_voxel(voxel, title, save_file = None):
+def plot_voxel(voxel, title=None, save_file = None):
     fig = plt.figure()
     ax = fig.gca(projection='3d')
     ax.voxels(voxel, edgecolor='k')

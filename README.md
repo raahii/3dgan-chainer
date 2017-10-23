@@ -12,6 +12,10 @@ Some **good** samples generated chairs. (50epoch)
 <img width='33%' src='result/generated_samples/png/21.png'><img width='33%' src='result/generated_samples/png/30.png'><img width='33%' src='result/generated_samples/png/31.png'>
 <img width='33%' src='result/generated_samples/png/40.png'><img width='33%' src='result/generated_samples/png/97.png'>
 
+```
+python generate_samples.py result/trained_models/Generator_50epoch.npz <save direcotry> <num to be generated>
+```
+
 ### Requirements
 
 - chainer(2.0.1)
